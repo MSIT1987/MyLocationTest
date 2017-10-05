@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AMTextView">
+        <attr name="fontStyle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="AMSmartImageView">
+        <attr name="rounded" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PrimaryButton">
+        <attr name="backgroundColor" format="color" />
+        <attr name="image" format="reference" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="text" format="string" />
+        <attr name="stork" format="dimension" />
+        <attr name="imageAlign" format="string" />
+        <attr name="textFontStyle" format="string" />
+        <attr name="storkColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="MyToggleButton">
+        <attr name="txtOn" format="string" />
+        <attr name="txtOff" format="string" />
+        <attr name="disAlpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SegmentedGroup">
+        <attr name="sc_corner_radius" format="dimension" />
+        <attr name="sc_border_width" format="dimension" />
+        <attr name="sc_tint_color" format="color" />
+        <attr name="sc_checked_text_color" format="color" />
+        <attr name="sc_unchecked_tint_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="AwesomeRadioButton">
+        <attr name="awesome_text" format="string"/>
+    </declare-styleable>
+
+</resources>

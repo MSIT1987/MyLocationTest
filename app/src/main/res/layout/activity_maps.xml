@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<fragment-->
+    <!--android:id="@+id/map"-->
+    <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+
+
+    <RelativeLayout
+        android:id="@+id/search_wrandroider"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/dummyTextEdit"
+        android:layout_toEndOf="@+id/dummyTextEdit">
+        <!--android:layout_height="UNKNOWN_DATA_0x5c01"-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="100.0">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="5.0" />
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+                android:layout_weight="90.0"
+                android:background="@drawable/shape_radius_8_in_map"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp">
+                <!--android:layout_width="UNKNOWN_DATA_0x1"-->
+                <!--android:layout_height="UNKNOWN_DATA_0x2401"-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1.0">
+
+
+                    <RelativeLayout
+                        android:id="@+id/search_clear_button"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+                        android:visibility="invisible">
+                        <!--android:layout_width="UNKNOWN_DATA_0x1901"-->
+
+
+                        <ir.msit87.mylocationtest.frameWork.ui.custom.AMSmartImageView
+                            android:layout_width="13dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+                            android:src="@mipmap/ic_cross_gray" />
+                        <!--android:layout_width="UNKNOWN_DATA_0xd01"-->
+
+
+                    </RelativeLayout>
+
+
+                    <ir.msit87.mylocationtest.frameWork.ui.custom.AMEditText
+                        android:id="@+id/search_input"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+                        android:layout_margin="0dp"
+                        android:layout_weight="1.0"
+                        android:background="#00000000"
+                        android:hint="جستجو"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textSize="13dp" />
+                    <!--android:layout_width="UNKNOWN_DATA_0x1"-->
+
+
+                    <ir.msit87.mylocationtest.frameWork.ui.custom.AMSmartImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_gravity="center_vertical|center"
+                        android:src="@mipmap/ic_magnifier" />
+                    <!--android:layout_width="UNKNOWN_DATA_0x1101"-->
+                    <!--android:layout_height="UNKNOWN_DATA_0x1101"-->
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="5.0" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_alignParentBottom="true"
+        android:background="#99ffffff"
+        android:visibility="invisible">
+        <!--android:layout_height="UNKNOWN_DATA_0x5f01"-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+
+            <ir.msit87.mylocationtest.frameWork.ui.custom.PrimaryButton
+                android:id="@+id/cancel_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginRight="50dp"
+                app:backgroundColor="#eb447d"
+                app:image="@mipmap/cancel_white" />
+            <!--android:layout_width="UNKNOWN_DATA_0x3201"-->
+            <!--android:layout_height="UNKNOWN_DATA_0x3201"-->
+
+
+            <ir.msit87.mylocationtest.frameWork.ui.custom.PrimaryButton
+                android:id="@+id/ok_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical|center"
+                app:backgroundColor="#63b9f8"
+                app:image="@mipmap/alert_success" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true">
+        <!--android:layout_height="UNKNOWN_DATA_0x9601"-->
+
+
+        <ImageView
+            android:id="@+id/location_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="73dp"
+            android:src="@mipmap/location_marker" />
+        <!--android:layout_height="UNKNOWN_DATA_0x3c01"-->
+
+
+    </RelativeLayout>
+
+
+    <ir.msit87.mylocationtest.frameWork.ui.custom.PrimaryButton
+        android:id="@+id/my_location_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginRight="15dp"
+        android:visibility="visible"
+        app:image="@mipmap/ic_location_detect"
+        app:stork="2dp" />
+    <!--android:layout_width="UNKNOWN_DATA_0x1e01"-->
+    <!--android:layout_height="UNKNOWN_DATA_0x1e01"-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_wrandroider"
+        android:layout_marginTop="8dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100.0">
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="5.0" />
+
+
+            <RelativeLayout
+                android:id="@+id/MainFragment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="90.0">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/search_result_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_radius_8_in_map"
+                    android:visibility="visible"
+                    tools:listitem="@layout/map_result_row" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="5.0" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/dummyTextEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+
+</RelativeLayout>
