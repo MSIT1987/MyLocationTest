@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by MSIT on 10/3/2017.
  */
 
-public class InputQuery implements Serializable {
+public class InputPredictionQuery implements Serializable {
 
     private String input;
 

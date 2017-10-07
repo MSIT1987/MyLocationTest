@@ -30,6 +30,8 @@ import java.security.MessageDigest;
 import java.util.Calendar;
 import java.util.Locale;
 
+import static android.content.Context.INPUT_METHOD_SERVICE;
+
 public class UtilityHelper {
 
     public interface DelayCallback {
@@ -305,12 +307,12 @@ public class UtilityHelper {
         return LayoutInflater.from(context);
     }
 
-//    public static void hideSoftKeyboard(Activity activity) {
-//        InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService("input_method");
-//        if (activity.getCurrentFocus() != null) {
-//            inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
-//        }
-//    }
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+        if (activity.getCurrentFocus() != null) {
+            inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        }
+    }
 
     public static void setupUIForHideSoftwareKeyboard(View view, final Activity activity) {
         if (!(view instanceof EditText)) {

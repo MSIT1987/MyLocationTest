@@ -8,11 +8,30 @@ import java.util.List;
 
 public interface MapModel {
 
-    interface GetMapCallBack {
+    interface GetPredictionCallBack {
+
         void onSuccess(List<Predictions> list);
 
         void onFailure(String error);
 
         void onNetworkFailure();
+    }
+
+    interface GetLocationCallBack {
+
+        void onSuccess(List<Results> list);
+
+        void onFailure(String error);
+
+        void onNetworkFailure();
+    }
+
+    interface GetProgressCallBack {
+
+        void onCompleted(String message);
+
+        void onError(String error);
+
+        void onNext(String message);
     }
 }

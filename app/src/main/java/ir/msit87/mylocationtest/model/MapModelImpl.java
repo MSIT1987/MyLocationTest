@@ -4,6 +4,7 @@ import java.util.List;
 
 import ir.msit87.mylocationtest.api.ApiClient;
 
+import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -14,11 +15,11 @@ import rx.schedulers.Schedulers;
 
 public class MapModelImpl implements MapModel {
 
-    public void FetchDataFromGoogleMap(final GetMapCallBack callBack, InputQuery inputQuery) {
+    public void getPredictions(final GetPredictionCallBack callBack, InputPredictionQuery inputPredictionQuery) {
 
         ApiClient
                 .getInstance()
-                .getPredictions(inputQuery)
+                .getPredictions(inputPredictionQuery)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<PlaceAutoCompleteResult>() {
@@ -40,5 +41,80 @@ public class MapModelImpl implements MapModel {
                         }
                     }
                 });
+    }
+
+    public void getLocations(final GetLocationCallBack callBack, String place_id, String key) {
+
+        ApiClient.getInstance()
+                .getLocation(place_id, key)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Subscriber<LocationResponse>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(LocationResponse locationResponse) {
+                        if (locationResponse.getStatus().equals("OK")) {
+                            List<Results> resultsList = locationResponse.getResults();
+                            callBack.onSuccess(resultsList);
+                        }
+                    }
+                });
+    }
+
+    public void asyncTasks(final GetProgressCallBack callBack, final String message) {
+
+        Observable<String> observable = Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                try {
+                    String res = message;//your original doInBackground
+                    subscriber.onNext(res);
+
+                    subscriber.onCompleted();
+                    // onNext would be comparable to AsyncTask.onProgressUpdate
+                    // and usually applies when background process runs a loop
+                } catch (Exception e) {
+                    // if the process throws an exception or produces a result
+                    // you'd consider error then use onError
+                    subscriber.onError(e);
+                }
+            }
+        });
+
+        observable
+                .observeOn(Schedulers.newThread())
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+//                        mapView.dismissProgress();
+                        callBack.onCompleted(message);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+//                        mapView.errorProgress(e.getMessage());
+                        callBack.onError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(String message) {
+                        // result from Observable.onNext. The methods below correspond
+                        // to their Observable counterparts.
+//                        mapView.showProgress(message);
+                        callBack.onNext(message);
+                    }
+                });
+
+
     }
 }

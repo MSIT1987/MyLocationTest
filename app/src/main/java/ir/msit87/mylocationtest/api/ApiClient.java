@@ -1,6 +1,7 @@
 package ir.msit87.mylocationtest.api;
 
-import ir.msit87.mylocationtest.model.InputQuery;
+import ir.msit87.mylocationtest.model.InputPredictionQuery;
+import ir.msit87.mylocationtest.model.LocationResponse;
 import ir.msit87.mylocationtest.model.PlaceAutoCompleteResult;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
@@ -35,18 +36,15 @@ public class ApiClient {
         return instance;
     }
 
-    public Observable<PlaceAutoCompleteResult> getPredictions(InputQuery inputQuery) {
-        return apiService
-                .getPredictions(inputQuery.getInput(),
-                        inputQuery.getRadius(),
-                        inputQuery.getLanguage(),
-                        inputQuery.getComponent(),
-                        inputQuery.getKey());
+    public Observable<PlaceAutoCompleteResult> getPredictions(InputPredictionQuery inputPredictionQuery) {
+        return apiService.getPredictions(inputPredictionQuery.getInput(),
+                inputPredictionQuery.getRadius(),
+                inputPredictionQuery.getLanguage(),
+                inputPredictionQuery.getComponent(),
+                inputPredictionQuery.getKey());
     }
 
-    //    public Observable<Predictions> getPredictions(String input,
-//                                                  String radius,
-//                                                  String language,
-//                                                  String component,
-//                                                  String key) {
+    public Observable<LocationResponse> getLocation(String place_id, String key) {
+        return apiService.getLocation(place_id, key);
+    }
 }
