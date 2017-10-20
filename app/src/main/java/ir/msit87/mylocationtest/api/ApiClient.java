@@ -3,9 +3,12 @@ package ir.msit87.mylocationtest.api;
 import ir.msit87.mylocationtest.model.InputPredictionQuery;
 import ir.msit87.mylocationtest.model.LocationResponse;
 import ir.msit87.mylocationtest.model.PlaceAutoCompleteResult;
+import ir.msit87.mylocationtest.modelDirection.DirectionResponse;
+import ir.msit87.mylocationtest.modelDirection.InputDirectionQuery;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
+import retrofit.http.Query;
 import rx.Observable;
 
 /**
@@ -46,5 +49,13 @@ public class ApiClient {
 
     public Observable<LocationResponse> getLocation(String place_id, String key) {
         return apiService.getLocation(place_id, key);
+    }
+
+    public Observable<DirectionResponse> getDirection(InputDirectionQuery inputDirectionQuery) {
+        return apiService.getDirection(inputDirectionQuery.getOrigin(),
+                inputDirectionQuery.getDestination(),
+                inputDirectionQuery.getSensor(),
+                inputDirectionQuery.getMode());
+//                inputDirectionQuery.getKey());
     }
 }

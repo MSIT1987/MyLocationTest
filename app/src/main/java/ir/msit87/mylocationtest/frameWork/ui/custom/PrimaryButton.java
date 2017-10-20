@@ -30,8 +30,8 @@ import ir.msit87.mylocationtest.frameWork.helpers.UtilityHelper;
  */
 public class PrimaryButton extends RelativeLayout {
 
-    private static final String ICON_WIDTH_KEY = "alpha";
-    private static final String ICON_HEIGHT_KEY = "10";
+    private static final String ICON_WIDTH_KEY = "width";
+    private static final String ICON_HEIGHT_KEY = "height";
 
     private Button button;
     public AMSmartImageView imageView;

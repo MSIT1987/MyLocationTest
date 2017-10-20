@@ -7,6 +7,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.yayandroid.locationmanager.constants.FailType;
 import com.yayandroid.locationmanager.constants.ProcessType;
 
+import java.util.HashMap;
 import java.util.List;
 
 import ir.msit87.mylocationtest.model.Predictions;
@@ -29,6 +30,16 @@ public interface MapView {
     void onPredictionsObtain(List<Predictions> predictionsList);
 
     void setLatLng(LatLng latLng);
+
+    void setOrigin(LatLng origin);
+
+    void setDestination(LatLng destination);
+
+    void clearTwoPoints();
+
+    List<LatLng> getTwoPoints();
+
+    void setPath(List<HashMap<String, String>> path);
 
     //void onLocationObtain(List<Results> resultsList);
 }

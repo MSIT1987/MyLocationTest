@@ -1,5 +1,7 @@
 package ir.msit87.mylocationtest.model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.List;
 
 /**
@@ -33,5 +35,13 @@ public interface MapModel {
         void onError(String error);
 
         void onNext(String message);
+    }
+
+
+    interface GetDirectionCallBack {
+
+        void onSuccess(List<LatLng> point);
+
+        void onFailure(String error);
     }
 }

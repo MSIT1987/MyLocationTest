@@ -8,5 +8,5 @@ public interface OnSearchRecyclerClickListener {
 
     void onSearchRecyclerClick(Object objectClick);
 
-    void onGetData(String placeid, String key);
+    void onGetData(String place_id, String key);
 }

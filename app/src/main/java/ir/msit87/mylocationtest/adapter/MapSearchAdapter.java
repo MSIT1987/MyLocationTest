@@ -75,6 +75,9 @@ public class MapSearchAdapter extends RecyclerView.Adapter<MapSearchAdapter.View
         @Bind(R.id.mapRecyclerItem)
         AMTextView description;
 
+        @Bind(R.id.mapPlaceList)
+        View layout;
+
         OnSearchHolderClickListener clickListener;
 
         ViewHolder(View view, OnSearchHolderClickListener clickListener) {
@@ -90,7 +93,7 @@ public class MapSearchAdapter extends RecyclerView.Adapter<MapSearchAdapter.View
         }
 
 
-        @OnClick(R.id.mapRecyclerItem)
+        @OnClick(R.id.mapPlaceList)
         void onClick() {
             if (clickListener == null)
                 return;

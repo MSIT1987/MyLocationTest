@@ -10,6 +10,7 @@ import java.util.List;
 
 import ir.msit87.mylocationtest.model.InputPredictionQuery;
 import ir.msit87.mylocationtest.model.Predictions;
+import ir.msit87.mylocationtest.modelDirection.InputDirectionQuery;
 import ir.msit87.mylocationtest.view.MapView;
 
 /**
@@ -23,6 +24,8 @@ public interface MapPresenter {
     void getPrediction(InputPredictionQuery inputPredictionQuery);
 
     void getLocation(String place_id, String key);
+
+    void getDirection(InputDirectionQuery inputDirectionQuery);
 
     void getProgress(String message);
 

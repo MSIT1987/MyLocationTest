@@ -14,12 +14,12 @@
 
 
     <RelativeLayout
-        android:id="@+id/search_wrandroider"
+        android:id="@+id/search_wrapper"
         android:layout_width="match_parent"
         android:layout_height="92dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/dummyTextEdit"
-        android:layout_toEndOf="@+id/dummyTextEdit">
+        android:layout_toEndOf="@+id/dummyTextEdit"
+        android:layout_toRightOf="@+id/dummyTextEdit">
         <!--android:layout_height="UNKNOWN_DATA_0x5c01"-->
 
 
@@ -63,7 +63,7 @@
                         <!--android:layout_width="UNKNOWN_DATA_0x1901"-->
 
 
-                        <ir.msit87.mylocationtest.frameWork.ui.custom.AMSmartImageView
+                        <ImageView
                             android:layout_width="13dp"
                             android:layout_height="match_parent"
                             android:layout_alignParentLeft="true"
@@ -92,7 +92,7 @@
                     <!--android:layout_width="UNKNOWN_DATA_0x1"-->
 
 
-                    <ir.msit87.mylocationtest.frameWork.ui.custom.AMSmartImageView
+                    <ImageView
                         android:id="@+id/search_icon"
                         android:layout_width="17dp"
                         android:layout_height="17dp"
@@ -199,7 +199,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_wrandroider"
+        android:layout_below="@+id/search_wrapper"
         android:layout_marginTop="8dp"
         android:focusable="true"
         android:focusableInTouchMode="true">
